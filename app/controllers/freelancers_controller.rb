@@ -1,6 +1,6 @@
 class FreelancersController < ApplicationController
   def index
-    @freelancers = Freelancer.all
+    @freelancer = Freelancer.where(["industry LIKE ?","%#{params[:search]}%"])
   end
   
 def new

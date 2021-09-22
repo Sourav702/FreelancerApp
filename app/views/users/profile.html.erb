@@ -1,2 +1,20 @@
-<h1><%= current_user.name%></h1>
-<h2><%= Job.find.count(current_user.id=Job.user_id) %></h2>
+<h1>Name : <%= current_user.name%></h1>
+<h2>Total Number of Job Posted : <%= Job.where({ user_id: [current_user.id]}).count %></h2>
+
+<% @job.each do |job| %>
+<div class="card">
+  <h5 class="card-header"></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to job.title, job %></h5>
+		 <h6 class="card-subtitle mb-2 text-muted">By : <%= job.user.name%></h6>
+     <p class="card-text"><%= job.description%></p>
+    <p class="date"><%= job.created_at.strftime("%B %d, %Y") %></p>
+    
+   <% if current_user %>
+    <%= link_to 'Edit Job',root_path ,class:"btn btn-warning"%>
+    <%= link_to 'Delete Job',root_path ,class:"btn btn-danger"%>
+  <% end %>
+   
+  </div>
+</div>
+<% end %>

@@ -33,6 +33,7 @@ def confirm_email
   end
 end
 def profile
+  @job = Job.where({ user_id: [current_user.id]})
 end
 private
 def user_params

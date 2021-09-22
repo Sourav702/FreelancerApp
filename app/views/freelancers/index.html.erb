@@ -1,14 +1,26 @@
-<% @freelancers.each do |f| %>
+<div class="my-3">
+<%= form_tag freelancers_path, :method => 'get' do %>
+<%= text_field_tag :search,params[:search] %>
+<%= submit_tag "Search"%>
+<% end %>
+</div>
 
-	<div class="card my-2" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+
+
+<% @freelancer.each do |freelancer| %>
+
+<div class="card">
+  <h5 class="card-header"></h5>
   <div class="card-body">
-    <h3 class="card-title"><%= link_to f.name,root_path %></h3>
-    <h4>email : <%= f.email%></h4>
-    <% if current_user!=nil or current_freelancer!=nil or current_admin!=nil%>
-      <a href="#" class="btn btn-primary">Send Connection Request</a>
-    <% end %>
-    <% if current_admin!=nil%>
+    <h5 class="card-title"><%= link_to freelancer.name, freelancer %></h5>
+		 <h6 class="card-subtitle mb-2 text-muted">email : <%= freelancer.email%></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Industry : <%= freelancer.industry%></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Experience : <%= freelancer.experience%></h6>
+    
+   <% if current_user==nil and current_freelancer!=nil %>
+    <%= link_to 'View Profile',freelancer ,class:"btn btn-primary"%>
+  <% end %>
+   <% if current_admin!=nil%>
       <a href="#" class="btn btn-warning">Edit Credential</a>
       <a href="#" class="btn btn-danger">Delete Credential</a>
     <% end %>

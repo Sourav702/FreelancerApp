@@ -47,12 +47,17 @@
           <li class="nav-item">
             <%= link_to 'All Jobs',jobs_path,class:'nav-link'%>
           </li>
+           <li class="nav-item">
+            <%= link_to 'Freelancers',freelancers_path,class:'nav-link'%>
+          </li>
+         
           <li class="nav-item">
             <%= link_to 'Create Jobs',new_jobs_path,class:'nav-link'%>
           </li>
           <li class="nav-item">
             <%= link_to 'My Profile',profile_path,class:'nav-link'%>
           </li>
+          
         <% elsif current_freelancer!=nil%>
           <li class="nav-item">
             <%= link_to 'My Profile',signup_path,class:'nav-link'%>
