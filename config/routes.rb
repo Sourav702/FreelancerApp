@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
   get "freelancer-signup", to: "freelancers#new", as: "freelancer-signup"
+  get "freeprofile", to: "freelancers#profile",as:"freeprofile"
   post "/freelancers" => "freelancers#create"
   resources :freesessions, only: [:new, :create, :destroy]
   get "freelancer-login", to: "freesessions#new", as: "freelancer-login"

@@ -39,5 +39,6 @@ def confirm_email
     redirect_to root_url
   end
 end
-
+def profile
+end
 end
