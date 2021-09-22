@@ -1,0 +1,38 @@
+<h2 class="text-center"> Create Freelancers Account</h2>
+
+<%=form_tag "/freelancers", method: :post do %>
+ <div>
+  <%= label_tag :name %>
+  <%= text_field_tag :name,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+
+ <div>
+  <%= label_tag :email %>
+  <%= email_field_tag :email,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+
+ <div>
+  <%= label_tag :password %>
+  <%= password_field_tag :password,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+
+ <div>
+  <%= label_tag :password_confirmation %>
+  <%= password_field_tag :password_confirmation,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+
+
+ <div>
+  <%= label_tag :education %>
+  <%= text_field_tag :education,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+ <div>
+  <%= label_tag :experience %>
+  <%= text_field_tag :experience,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+ <div>
+  <%= label_tag :industry %>
+  <%= text_field_tag :industry,"",required: true,class:"form-control form-control-lg" %>
+ </div>
+  <%= submit_tag "Sign Up", class: "btn btn-secondary mt-3" %>
+<% end %>

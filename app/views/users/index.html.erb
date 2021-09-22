@@ -1,0 +1,19 @@
+<div class="d-flex flex-wrap">
+<% @users.each do |user| %>
+	<div class="card my-2 mx-3" style="width: 18rem;">
+<p>
+
+
+  </p>
+  <div class="card-body">
+    <h3 class="card-title"><%= link_to user.name,user %></h3>
+    <h4>email : <%= user.email%></h4>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <% if current_admin!=nil %>
+    <%= link_to 'Edit Credential',root_path ,class:"btn btn-warning"%>
+    <%= link_to 'Delete Credential',root_path ,class:"btn btn-danger"%>
+  <% end %>
+  </div>
+</div>
+<% end %>
+</div>

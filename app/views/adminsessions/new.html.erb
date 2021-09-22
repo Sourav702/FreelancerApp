@@ -1,0 +1,19 @@
+
+
+<h1 class="text-center">Admin Login</h1>
+
+<%= form_tag adminsessions_path do |form| %>
+  <div class="field">
+    <%= label_tag :email %>
+    <%= email_field_tag :email,"",required: true,class:"form-control form-control-lg" %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password,"",required: true,class:"form-control form-control-lg" %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Login",class:"btn btn-info mt-3" %>
+  </div>
+<% end %>

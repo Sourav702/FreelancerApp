@@ -1,0 +1,14 @@
+<% name= current_user.present? ? current_user.name : 'Stranger' %>
+<% name2= current_freelancer.present? ? current_freelancer.name : 'Stranger' %>
+
+<% if current_user!=nil %>
+<h1 class="text-center">welcome <%= name %></h1>
+<% elsif current_freelancer!=nil %>
+<h1 class="text-center">welcome <%= name2 %></h1>
+
+
+
+<% else %>
+
+<% end %>
+<%= render 'extra/curosel' %>

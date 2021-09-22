@@ -1,0 +1,15 @@
+<div id="post_content" class="container mt-4">
+	<h1 class="title"><%= @job.title %></h1>
+  <h3 class="title"><%= @job.description %></h3>
+   <h3 class="title"><%= @job.stipend %></h3>
+	<p class="date">
+		Job Posted <%= time_ago_in_words(@job.created_at) %> Ago By <b><%= @job.user.name %></b>
+		<% if current_user && @job.user == current_user %>
+		| <%= link_to 'Edit', edit_job_path(@job) %> |
+		  <%= link_to 'Delete', job_path(@job), method: :delete, data: { confirm: 'Are you sure?' } %>
+	  <% end %>
+	</p>
+
+
+
+</div>
